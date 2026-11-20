@@ -7,6 +7,7 @@ Modules
 ``codec``       record decoder/encoder with absolute byte provenance
 ``stream``      bounded streaming record delimitation over the original octets
 ``repository``  SQLite product registry + per-record field/relation fact store
+``keymatrix``   key-matrix ghost-contact histories and gesture queries
 ``errors``      error hierarchy carrying absolute offsets
 
 See ``README.md`` for the exact supported encoding subset and the design rules.
@@ -19,10 +20,19 @@ from .errors import (
     DecodeError,
     EncodeError,
     ImportStateError,
+    MatrixError,
     ProductRevisionError,
     SchemaError,
     TelberError,
     TruncatedError,
+)
+from .keymatrix import (
+    GestureTable,
+    HistoryDag,
+    MachineModel,
+    ScanSegment,
+    load_segment,
+    query_actions,
 )
 from .repository import ImportInfo, Repository
 from .schema import Field, Product, compile_product
@@ -43,12 +53,19 @@ __all__ = [
     "scan_records",
     "Repository",
     "ImportInfo",
+    "MachineModel",
+    "ScanSegment",
+    "HistoryDag",
+    "GestureTable",
+    "load_segment",
+    "query_actions",
     "TelberError",
     "BerError",
     "TruncatedError",
     "DecodeError",
     "SchemaError",
     "EncodeError",
+    "MatrixError",
     "ProductRevisionError",
     "ImportStateError",
 ]

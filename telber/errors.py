@@ -91,3 +91,22 @@ class ImportStateError(TelberError):
     """An import cannot be mutated in the requested way."""
 
     code = "import_state_error"
+
+
+class MatrixError(TelberError):
+    """A key-matrix model, scan segment or gesture table is not usable.
+
+    Carries the 0-based frame index in ``frame_index`` when the problem is
+    tied to one frame of a segment.
+    """
+
+    code = "matrix_error"
+
+    def __init__(self, message: str, *, frame_index: int | None = None, **kwargs) -> None:
+        super().__init__(message, **kwargs)
+        self.frame_index = frame_index
+
+    def as_dict(self) -> dict:
+        d = super().as_dict()
+        d["frame_index"] = self.frame_index
+        return d

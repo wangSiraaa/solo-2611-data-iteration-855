@@ -1,0 +1,91 @@
+{
+  "description": "The two-contact gesture plus the four three-contact groups.",
+  "gestures": [
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "action": "duo",
+      "order": 1
+    },
+    {
+      "required": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "trio",
+      "order": 2
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "trio",
+      "order": 3
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "trio",
+      "order": 4
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "action": "trio",
+      "order": 5
+    }
+  ]
+}

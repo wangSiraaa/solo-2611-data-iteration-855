@@ -1,0 +1,77 @@
+{
+  "description": "All four three-contact groups fire one shared action.",
+  "gestures": [
+    {
+      "required": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "ensemble",
+      "order": 1
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "ensemble",
+      "order": 2
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "ensemble",
+      "order": 3
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "action": "ensemble",
+      "order": 4
+    }
+  ]
+}

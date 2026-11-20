@@ -1,0 +1,63 @@
+{
+  "schema": "matrix.scan",
+  "version": 1,
+  "description": "Key-matrix scan segment directory for the BER subset. One record is one scan segment: the machine model (installed contacts, simultaneous-key limit) plus the per-frame row scans, packed one octet per row (bit c = column c read). Contact index k = row*cols + col, bit k of 'installed' marks a physically installed contact. Supported bounds: 3 rows x 4 columns, 4 simultaneous keys, 80 frames per segment.",
+  "root": {
+    "name": "MatrixScanSegment",
+    "tag": {"class": "universal", "number": 16},
+    "type": "SEQUENCE",
+    "fields": [
+      {
+        "name": "station_id",
+        "tag": {"class": "context", "number": 0},
+        "mode": "implicit",
+        "type": "INTEGER"
+      },
+      {
+        "name": "model",
+        "tag": {"class": "application", "number": 301},
+        "mode": "implicit",
+        "type": "SEQUENCE",
+        "fields": [
+          {
+            "name": "rows",
+            "tag": {"class": "context", "number": 0},
+            "mode": "implicit",
+            "type": "INTEGER"
+          },
+          {
+            "name": "cols",
+            "tag": {"class": "context", "number": 1},
+            "mode": "implicit",
+            "type": "INTEGER"
+          },
+          {
+            "name": "max_keys",
+            "tag": {"class": "context", "number": 2},
+            "mode": "implicit",
+            "type": "INTEGER"
+          },
+          {
+            "name": "installed",
+            "tag": {"class": "context", "number": 3},
+            "mode": "implicit",
+            "type": "OCTET STRING"
+          }
+        ]
+      },
+      {
+        "name": "frames",
+        "tag": {"class": "context", "number": 4},
+        "mode": "implicit",
+        "type": "OCTET STRING"
+      },
+      {
+        "name": "note",
+        "tag": {"class": "context", "number": 5},
+        "mode": "explicit",
+        "type": "NULL",
+        "optional": true
+      }
+    ]
+  }
+}

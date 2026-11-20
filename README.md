@@ -98,8 +98,9 @@ declared base type.
 | `telber/stream.py` | bounded streaming delimitation over the original octets |
 | `telber/repository.py` | SQLite product registry + per-record fact relation store |
 | `telber/service.py` | independent compile service: artifact, check, encode |
+| `telber/keymatrix.py` | key-matrix ghost-contact histories and gesture queries |
 | `telber/build.py` | independent byte builder used only by tests/demo |
-| `telber/demo.py`, `telber/cli.py` | demo and command-line entry points |
+| `telber/demo.py`, `telber/matrix_demo.py`, `telber/cli.py` | demo and command-line entry points |
 
 Two source modules carry the core: `schema.py` + `codec.py` compile and
 interpret the directory, and `stream.py` + `repository.py` produce the streaming
@@ -135,6 +136,54 @@ committed as a **partial** import with the error code, absolute offset and the
 failing record's start offset. A partial import cannot be published as
 whole-stream complete. There is no resynchronisation: the scanner never scans
 forward for a plausible tag.
+
+## Key-matrix scan product
+
+A second product lives in the same type directory (`schemas/matrix_keys_v1.json`,
+`matrix.scan` v1) and shares the import and repository machinery above; the
+telemetry entry points are unchanged. One record is one scan segment of a
+diode-less key matrix: the machine model (grid size, simultaneous-key limit,
+installed-contact bitmask) plus the per-frame row scans, one octet per row
+(bit *c* = column *c* read). Bounds: 3 rows × 4 columns, 4 simultaneous keys,
+80 frames per segment.
+
+`telber/keymatrix.py` is pure analysis over the committed field facts — an
+archive reader never re-reads the original byte stream:
+
+* **Circuit model** — a closed contact connects its row and column; scanning
+  a row reads every column reachable through closed contacts, so three real
+  contacts can read as four (ghosting). Adjacent frames differ by at most one
+  open/close; the first frame may start from any legal state.
+* **Possible histories** — `HistoryDag` keeps every true contact history that
+  explains all frames simultaneously, as a trimmed layered DAG (per-frame
+  states plus one-contact transitions). Per-frame feasible sets alone are
+  never concatenated: states that sit on no complete history are dropped.
+  Unexplainable input reports the earliest contradictory frame.
+* **Gesture table** — each record fixes must-press contacts, an action and a
+  unique same-length precedence. A frame takes the satisfied record with the
+  most must-press contacts (ties by precedence, none = empty); an action
+  triggers only when the name changes against the previous frame while
+  non-empty. `query_actions` judges an ordered action string: does it appear
+  as a contiguous segment of the trigger stream in `all`, only `some`, or
+  `none` of the feasible histories — with a representative contact history
+  (and counter-witness) to read back. The DAG is built before and
+  independently of any table, so trajectories never change when the booth
+  reloads gestures.
+
+```bash
+python3 tools/matrix_demo.py --out data/matrix/   # encode the 2x2 example, reopen, verify
+python3 -m telber.cli ingest data/matrix/product.json data/matrix/matrix.bin --db matrix.sqlite
+python3 -m telber.cli matrix-segment matrix.sqlite --import-id 1 --record 0
+python3 -m telber.cli matrix-query matrix.sqlite --import-id 1 --record 1 \
+    --gestures data/matrix/gestures_corrected.json --actions trio,duo
+```
+
+The demo encodes the booth example (2×2, all contacts installed, ≤3 keys;
+two frames read everywhere, then the corrected second frame with only the
+first row's two read points), imports it, reopens the repository and checks:
+four distinct actions → each single action `some`, consecutive pairs `none`;
+one shared action → `all` (exactly once); the corrected segment with the
+two-contact gesture → the consecutive pair `trio,duo` is `all`.
 
 ## Running
 
@@ -173,4 +222,9 @@ Coverage highlights (`tests/`):
   definite and indefinite encodings;
 * `test_demo_truth.py` — checks the demo's relation table against an
   independently derived presence map and byte ranges;
+* `test_keymatrix.py` — ghost readout, per-frame truths, DAG trimming and
+  earliest-contradiction reporting, gesture precedence, trigger rules,
+  all/some/none verdicts cross-checked against brute-force history
+  enumeration, the 2×2 booth example through a reopened repository, and the
+  3×4 / 4-key / 80-frame bounds;
 * `test_scale.py` — depth 32, 100 MiB stream, 2 MiB body cap (opt-in).

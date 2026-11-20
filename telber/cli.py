@@ -8,6 +8,9 @@ Examples::
     python3 -m telber.cli encode product.json values.json -o record.bin
     python3 -m telber.cli ingest product.json telemetry.bin -o telemetry.sqlite
     python3 -m telber.cli report telemetry.sqlite
+    python3 -m telber.cli matrix-segment matrix.sqlite --import-id 1 --record 0
+    python3 -m telber.cli matrix-query matrix.sqlite --import-id 1 --record 0 \
+        --gestures gestures.json --actions trio,duo
 """
 
 from __future__ import annotations
@@ -19,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from telber import keymatrix  # noqa: E402
 from telber.errors import TelberError  # noqa: E402
 from telber.repository import Repository  # noqa: E402
 from telber.service import CompileService  # noqa: E402
@@ -114,6 +118,36 @@ def cmd_report(args) -> int:
     return 0
 
 
+def cmd_matrix_segment(args) -> int:
+    """Extract one segment's whole possible-contact-history DAG."""
+    try:
+        with Repository(args.db) as repo:
+            segment = keymatrix.load_segment(repo, args.import_id, args.record)
+        dag = segment.build_dag()
+    except TelberError as exc:
+        print(json.dumps(exc.as_dict(), indent=2), file=sys.stderr)
+        return 2
+    print(json.dumps(dag.as_dict(), indent=2))
+    return 0
+
+
+def cmd_matrix_query(args) -> int:
+    """Judge an ordered action string against a loaded gesture table."""
+    try:
+        gestures = json.loads(Path(args.gestures).read_text(encoding="utf-8"))
+        actions = [a for a in args.actions.split(",") if a]
+        with Repository(args.db) as repo:
+            segment = keymatrix.load_segment(repo, args.import_id, args.record)
+        dag = segment.build_dag()
+        table = keymatrix.GestureTable.from_json(gestures, segment.model)
+        result = keymatrix.query_actions(dag, table, actions)
+    except TelberError as exc:
+        print(json.dumps(exc.as_dict(), indent=2), file=sys.stderr)
+        return 2
+    print(json.dumps(result.as_dict(), indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="telber", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -147,6 +181,26 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--import-id", type=int, default=None)
     p.add_argument("--relation", action="store_true", help="include record/field facts")
     p.set_defaults(func=cmd_report)
+
+    p = sub.add_parser(
+        "matrix-segment",
+        help="extract a key-matrix segment's possible-contact-history DAG",
+    )
+    p.add_argument("db")
+    p.add_argument("--import-id", type=int, required=True)
+    p.add_argument("--record", type=int, required=True, help="record ordinal of the segment")
+    p.set_defaults(func=cmd_matrix_segment)
+
+    p = sub.add_parser(
+        "matrix-query",
+        help="judge an ordered action string against a gesture table",
+    )
+    p.add_argument("db")
+    p.add_argument("--import-id", type=int, required=True)
+    p.add_argument("--record", type=int, required=True, help="record ordinal of the segment")
+    p.add_argument("--gestures", required=True, help="gesture table JSON file")
+    p.add_argument("--actions", required=True, help="comma-separated action names")
+    p.set_defaults(func=cmd_matrix_query)
 
     args = parser.parse_args(argv)
     return args.func(args)

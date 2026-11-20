@@ -1,0 +1,77 @@
+{
+  "description": "Each three-contact group fires its own action.",
+  "gestures": [
+    {
+      "required": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "alpha",
+      "order": 1
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "beta",
+      "order": 2
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "action": "gamma",
+      "order": 3
+    },
+    {
+      "required": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "action": "delta",
+      "order": 4
+    }
+  ]
+}

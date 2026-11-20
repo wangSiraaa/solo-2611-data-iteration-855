@@ -1,0 +1,1299 @@
+{
+  "product_id": "23f37db1887442f8840ccdd5be0698772bf72372a1c505d41a59000bc6e1f264",
+  "schema": "matrix.scan",
+  "schema_version": 1,
+  "stream_bytes": 58,
+  "records": {
+    "0": {
+      "model": {
+        "rows": 2,
+        "cols": 2,
+        "max_keys": 3,
+        "installed": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "status": "ok",
+      "frame_count": 2,
+      "analyzed_frames": 2,
+      "contradiction_frame": null,
+      "signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frames": [
+        {
+          "index": 0,
+          "row_masks": [
+            3,
+            3
+          ],
+          "contacts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "explaining_states": 4,
+          "on_path_states": 4
+        },
+        {
+          "index": 1,
+          "row_masks": [
+            3,
+            3
+          ],
+          "contacts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "explaining_states": 4,
+          "on_path_states": 4
+        }
+      ],
+      "layers": [
+        [
+          {
+            "index": 0,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "index": 1,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "index": 2,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "index": 3,
+            "contacts": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "index": 1,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "index": 2,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "index": 3,
+            "contacts": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ]
+      ],
+      "transitions": [
+        {
+          "from_frame": 0,
+          "edges": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "1": {
+      "model": {
+        "rows": 2,
+        "cols": 2,
+        "max_keys": 3,
+        "installed": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "status": "ok",
+      "frame_count": 2,
+      "analyzed_frames": 2,
+      "contradiction_frame": null,
+      "signature": "f3d09c0906f8e99aa6394dedfd728074945337125c10bf5acc24b8728cb6540b",
+      "frames": [
+        {
+          "index": 0,
+          "row_masks": [
+            3,
+            3
+          ],
+          "contacts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "explaining_states": 4,
+          "on_path_states": 2
+        },
+        {
+          "index": 1,
+          "row_masks": [
+            3,
+            0
+          ],
+          "contacts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "explaining_states": 1,
+          "on_path_states": 1
+        }
+      ],
+      "layers": [
+        [
+          {
+            "index": 0,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "index": 1,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "index": 0,
+            "contacts": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      ],
+      "transitions": [
+        {
+          "from_frame": 0,
+          "edges": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "queries": [
+    {
+      "status": "ok",
+      "verdict": "some",
+      "query": [
+        "alpha"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "alpha",
+          "alpha"
+        ],
+        "triggers": [
+          "alpha"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "some",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "some",
+      "query": [
+        "beta"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "beta",
+          "beta"
+        ],
+        "triggers": [
+          "beta"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "some",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "some",
+      "query": [
+        "gamma"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "gamma",
+          "gamma"
+        ],
+        "triggers": [
+          "gamma"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "some",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "some",
+      "query": [
+        "delta"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "gamma",
+          "gamma"
+        ],
+        "triggers": [
+          "gamma"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "some",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "none",
+      "query": [
+        "alpha",
+        "beta"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": null,
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "none",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "none",
+      "query": [
+        "alpha",
+        "alpha"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": null,
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "delta",
+          "delta"
+        ],
+        "triggers": [
+          "delta"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_distinct.json",
+      "expected_verdict": "none",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "all",
+      "query": [
+        "ensemble"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "ensemble",
+          "ensemble"
+        ],
+        "triggers": [
+          "ensemble"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": null,
+      "record": 0,
+      "gestures": "gestures_same.json",
+      "expected_verdict": "all",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "none",
+      "query": [
+        "ensemble",
+        "ensemble"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": null,
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "ensemble",
+          "ensemble"
+        ],
+        "triggers": [
+          "ensemble"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_same.json",
+      "expected_verdict": "none",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "none",
+      "query": [
+        "trio",
+        "duo"
+      ],
+      "dag_signature": "a794596719b01df738d50475aa5d3d2ea30e632cce00dab45c649696f6d50f4f",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": null,
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "actions": [
+          "trio",
+          "trio"
+        ],
+        "triggers": [
+          "trio"
+        ]
+      },
+      "record": 0,
+      "gestures": "gestures_corrected.json",
+      "expected_verdict": "none",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "all",
+      "query": [
+        "trio",
+        "duo"
+      ],
+      "dag_signature": "f3d09c0906f8e99aa6394dedfd728074945337125c10bf5acc24b8728cb6540b",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "trio",
+          "duo"
+        ],
+        "triggers": [
+          "trio",
+          "duo"
+        ],
+        "match_span": [
+          0,
+          2
+        ]
+      },
+      "counter_witness": null,
+      "record": 1,
+      "gestures": "gestures_corrected.json",
+      "expected_verdict": "all",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "none",
+      "query": [
+        "duo",
+        "trio"
+      ],
+      "dag_signature": "f3d09c0906f8e99aa6394dedfd728074945337125c10bf5acc24b8728cb6540b",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": null,
+      "counter_witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "trio",
+          "duo"
+        ],
+        "triggers": [
+          "trio",
+          "duo"
+        ]
+      },
+      "record": 1,
+      "gestures": "gestures_corrected.json",
+      "expected_verdict": "none",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "all",
+      "query": [
+        "trio"
+      ],
+      "dag_signature": "f3d09c0906f8e99aa6394dedfd728074945337125c10bf5acc24b8728cb6540b",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "trio",
+          "duo"
+        ],
+        "triggers": [
+          "trio",
+          "duo"
+        ],
+        "match_span": [
+          0,
+          1
+        ]
+      },
+      "counter_witness": null,
+      "record": 1,
+      "gestures": "gestures_corrected.json",
+      "expected_verdict": "all",
+      "ok": true
+    },
+    {
+      "status": "ok",
+      "verdict": "all",
+      "query": [
+        "duo"
+      ],
+      "dag_signature": "f3d09c0906f8e99aa6394dedfd728074945337125c10bf5acc24b8728cb6540b",
+      "frame_count": 2,
+      "contradiction_frame": null,
+      "witness": {
+        "states": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "actions": [
+          "trio",
+          "duo"
+        ],
+        "triggers": [
+          "trio",
+          "duo"
+        ],
+        "match_span": [
+          1,
+          2
+        ]
+      },
+      "counter_witness": null,
+      "record": 1,
+      "gestures": "gestures_corrected.json",
+      "expected_verdict": "all",
+      "ok": true
+    }
+  ],
+  "checks_passed": 13,
+  "checks_failed": 0,
+  "import": {
+    "import_id": 1,
+    "product_id": "23f37db1887442f8840ccdd5be0698772bf72372a1c505d41a59000bc6e1f264",
+    "status": "complete",
+    "record_count": 2,
+    "byte_count": 58,
+    "error_code": null,
+    "error_offset": null,
+    "error_record_start": null
+  }
+}

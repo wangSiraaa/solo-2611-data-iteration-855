@@ -1,0 +1,251 @@
+{
+  "product_id": "23f37db1887442f8840ccdd5be0698772bf72372a1c505d41a59000bc6e1f264",
+  "root": {
+    "fields": [
+      {
+        "depth": 0,
+        "mode": "implicit",
+        "name": "station_id",
+        "optional": false,
+        "ordinal": 0,
+        "path": "station_id",
+        "tag": {
+          "class": "context",
+          "number": 0
+        },
+        "type": "INTEGER",
+        "wire_tag": {
+          "class": "context",
+          "constructed": false,
+          "number": 0
+        }
+      },
+      {
+        "depth": 0,
+        "fields": [
+          {
+            "depth": 1,
+            "mode": "implicit",
+            "name": "rows",
+            "optional": false,
+            "ordinal": 0,
+            "path": "model.rows",
+            "tag": {
+              "class": "context",
+              "number": 0
+            },
+            "type": "INTEGER",
+            "wire_tag": {
+              "class": "context",
+              "constructed": false,
+              "number": 0
+            }
+          },
+          {
+            "depth": 1,
+            "mode": "implicit",
+            "name": "cols",
+            "optional": false,
+            "ordinal": 1,
+            "path": "model.cols",
+            "tag": {
+              "class": "context",
+              "number": 1
+            },
+            "type": "INTEGER",
+            "wire_tag": {
+              "class": "context",
+              "constructed": false,
+              "number": 1
+            }
+          },
+          {
+            "depth": 1,
+            "mode": "implicit",
+            "name": "max_keys",
+            "optional": false,
+            "ordinal": 2,
+            "path": "model.max_keys",
+            "tag": {
+              "class": "context",
+              "number": 2
+            },
+            "type": "INTEGER",
+            "wire_tag": {
+              "class": "context",
+              "constructed": false,
+              "number": 2
+            }
+          },
+          {
+            "depth": 1,
+            "mode": "implicit",
+            "name": "installed",
+            "optional": false,
+            "ordinal": 3,
+            "path": "model.installed",
+            "tag": {
+              "class": "context",
+              "number": 3
+            },
+            "type": "OCTET STRING",
+            "wire_tag": {
+              "class": "context",
+              "constructed": false,
+              "number": 3
+            }
+          }
+        ],
+        "mode": "implicit",
+        "name": "model",
+        "optional": false,
+        "ordinal": 1,
+        "path": "model",
+        "tag": {
+          "class": "application",
+          "number": 301
+        },
+        "type": "SEQUENCE",
+        "wire_tag": {
+          "class": "application",
+          "constructed": true,
+          "number": 301
+        }
+      },
+      {
+        "depth": 0,
+        "mode": "implicit",
+        "name": "frames",
+        "optional": false,
+        "ordinal": 2,
+        "path": "frames",
+        "tag": {
+          "class": "context",
+          "number": 4
+        },
+        "type": "OCTET STRING",
+        "wire_tag": {
+          "class": "context",
+          "constructed": false,
+          "number": 4
+        }
+      },
+      {
+        "depth": 0,
+        "mode": "explicit",
+        "name": "note",
+        "optional": true,
+        "ordinal": 3,
+        "path": "note",
+        "tag": {
+          "class": "context",
+          "number": 5
+        },
+        "type": "NULL",
+        "wire_tag": {
+          "class": "context",
+          "constructed": true,
+          "number": 5
+        }
+      }
+    ],
+    "name": "MatrixScanSegment",
+    "tag": {
+      "class": "universal",
+      "number": 16
+    },
+    "type": "SEQUENCE"
+  },
+  "schema": "matrix.scan",
+  "schema_document": {
+    "description": "Key-matrix scan segment directory for the BER subset. One record is one scan segment: the machine model (installed contacts, simultaneous-key limit) plus the per-frame row scans, packed one octet per row (bit c = column c read). Contact index k = row*cols + col, bit k of 'installed' marks a physically installed contact. Supported bounds: 3 rows x 4 columns, 4 simultaneous keys, 80 frames per segment.",
+    "root": {
+      "fields": [
+        {
+          "mode": "implicit",
+          "name": "station_id",
+          "tag": {
+            "class": "context",
+            "number": 0
+          },
+          "type": "INTEGER"
+        },
+        {
+          "fields": [
+            {
+              "mode": "implicit",
+              "name": "rows",
+              "tag": {
+                "class": "context",
+                "number": 0
+              },
+              "type": "INTEGER"
+            },
+            {
+              "mode": "implicit",
+              "name": "cols",
+              "tag": {
+                "class": "context",
+                "number": 1
+              },
+              "type": "INTEGER"
+            },
+            {
+              "mode": "implicit",
+              "name": "max_keys",
+              "tag": {
+                "class": "context",
+                "number": 2
+              },
+              "type": "INTEGER"
+            },
+            {
+              "mode": "implicit",
+              "name": "installed",
+              "tag": {
+                "class": "context",
+                "number": 3
+              },
+              "type": "OCTET STRING"
+            }
+          ],
+          "mode": "implicit",
+          "name": "model",
+          "tag": {
+            "class": "application",
+            "number": 301
+          },
+          "type": "SEQUENCE"
+        },
+        {
+          "mode": "implicit",
+          "name": "frames",
+          "tag": {
+            "class": "context",
+            "number": 4
+          },
+          "type": "OCTET STRING"
+        },
+        {
+          "mode": "explicit",
+          "name": "note",
+          "optional": true,
+          "tag": {
+            "class": "context",
+            "number": 5
+          },
+          "type": "NULL"
+        }
+      ],
+      "name": "MatrixScanSegment",
+      "tag": {
+        "class": "universal",
+        "number": 16
+      },
+      "type": "SEQUENCE"
+    },
+    "schema": "matrix.scan",
+    "version": 1
+  },
+  "version": 1
+}
